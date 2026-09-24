@@ -168,7 +168,7 @@ function AbilityController.init()
         VisualFX.showDamageIndicator(position, damage)
     end)
 
-    -- Bind Inputs
+    -- Bind Keys
     UserInputService.InputBegan:Connect(function(input, gameProcessed)
         if gameProcessed then return end
 
@@ -176,9 +176,13 @@ function AbilityController.init()
             AbilityController.castDash()
         elseif input.KeyCode == Enum.KeyCode.E then
             AbilityController.castFireball()
-        elseif input.UserInputType == Enum.UserInputType.MouseButton1 then
-            AbilityController.castFireball()
         end
+    end)
+
+    -- Optional Left Click to cast Fireball
+    mouse.Button1Down:Connect(function()
+        -- Cast Fireball on left click as an intuitive alternative
+        AbilityController.castFireball()
     end)
 end
 
