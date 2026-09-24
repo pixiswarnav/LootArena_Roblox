@@ -12,3 +12,12 @@ profile.svg
 
 # Time trace
 trace.json
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.lock
+*.rbxl.lock
+*.rbxmx.lock
+.vscode/
+.idea/
